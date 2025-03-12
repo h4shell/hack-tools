@@ -72,6 +72,16 @@ gobuster dir -u http://target -w /usr/share/SecLists/Discovery/Web-Content/direc
 - `-u` directory http del target
 - `-w` dizionario di forza bruta
 
+### Scansiona delle path tramite ffuf
+
+```
+ffuf -w /usr/share/wordlists/seclists/big.txt -u http://10.10.73.154/FUZZ
+```
+
+- `-u` directory http del target
+- `-w` dizionario di forza bruta
+- `FUZZ` variabile dove sostutuire le parole del dizionario
+
 ## GET POST DELETE e PUL da terminale
 
 ### GET request
@@ -99,12 +109,20 @@ curl -s -X POST https://example.com/api -H "Content-Type: application/json" -d '
 ### Bruteforce web (hydra)
 
 ```
-hydra -l admin -P /usr/share/wordlists/rockyou.txt lookup.thm http-post-form "/login.php:username=^USER^&password=^PASS^:Wrong" -IV -t 64
+hydra -l admin -P /usr/share/wordlists/rockyou.txt <ip_target / domain_target> http-post-form "/login.php:username=^USER^&password=^PASS^:Wrong" -IV -t 64
 ```
 
 - `-l` utente per il bruteforce
 - `-P` wordlist da usare per il bruteforce delle password
-- `-http-post-form` Tipo di richiesta
+- `http-post-form` Tipo di richiesta
+
+```
+hydra -l user -P /usr/share/wordlists/rockyou.txt <ip_target> ssh
+```
+
+- `-l` utente per il bruteforce
+- `-P` wordlist da usare per il bruteforce delle password
+- `ssh` Tipo di richiesta
 
 ## Risorse utils
 
