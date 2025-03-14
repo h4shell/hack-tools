@@ -124,6 +124,14 @@ hydra -l user -P /usr/share/wordlists/rockyou.txt <ip_target> ssh
 - `-P` wordlist da usare per il bruteforce delle password
 - `ssh` Tipo di richiesta
 
+## Privileges Escalation
+```
+find / -user root -perm /4000
+```
+
+Poi cerca gli eseguibili che possono scalare i privilegi da https://gtfobins.github.io/
+
+
 ## Risorse utils
 
 - /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt
