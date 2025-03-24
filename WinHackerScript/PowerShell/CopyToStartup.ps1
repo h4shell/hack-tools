@@ -1,0 +1,1 @@
+Copy-Item ".\AppKiller.ps1" "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
