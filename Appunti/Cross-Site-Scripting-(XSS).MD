@@ -156,6 +156,6 @@ L'output mostrerà quali payload sono stati iniettati e se sono stati rilevati s
 
 ### Scansione POST
 Considera un form di invio commenti su https://targetsite.com/comment che accetta il parametro “comment”. Per testare:
-- `python xssstrike.py --url "https://targetsite.com/comment" --method POST --data "comment=xxx" --verbose`  
+- `python xssstrike.py --url "https://targetsite.com/comment" --data "comment=xxx" --verbose`  
 
 Il tool invierà richieste sostituendo “xxx” con payload XSS e verificherà eventuali esecuzioni.
